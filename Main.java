@@ -59,15 +59,16 @@ public class Main {
 	}
 
 class GST {
-	float Gst, Cgst, Sgst, rate, FinalAmount;
+	float Gst, Cgst, Sgst, rate, FinalAmount, mrqt;
 	// Final Amount = rate + Cgst + Sgst
 }
 
 class FivePercent extends GST {
 	FivePercent(int q, float mrp) {
-		this.Gst = (5*q*mrp)/118;
+		this.mrqt = mrp*q;
+		this.Gst = (18*q*mrqt)/118;
 		this.Cgst = this.Sgst = Gst/2;
-		this.rate = mrp - Gst;
+		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
 	}
 
