@@ -66,7 +66,7 @@ class GST {
 class FivePercent extends GST {
 	FivePercent(int q, float mrp) {
 		this.mrqt = mrp*q;
-		this.Gst = (18*q*mrqt)/118;
+		this.Gst = (18*mrqt)/118;
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
