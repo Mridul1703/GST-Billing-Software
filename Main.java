@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     int n;//counter var for loop
+	float rateAdd, cgstAdd, sgstAdd, FinalAdd, GstAdd;
 	public static void main(String[] args) {
 	Scanner sc = new Scanner (System.in);
 	int n=1;
@@ -58,8 +59,8 @@ public class Main {
 						qt = sc.nextInt();
 						System.out.print("Enter MRP: ");
 						mr = sc.nextFloat();
-						FivePercent f = new FivePercent(qt, mr);
-						f.Invoice();
+						FivePercent rc = new FivePercent(qt, mr);
+						rc.Invoice();
 						break;
 					case 2:
 						//Pulses , gst-5%//
@@ -178,6 +179,12 @@ public class Main {
 				switch (ch2) {
 				case 1:
 					//helmets , gst-18%//
+					System.out.print("\nEnter quantity: "); 
+					qt = sc.nextInt();
+					System.out.print("Enter MRP: ");
+					mr = sc.nextFloat();
+					EighteenPercent hmt = new EighteenPercent(qt, mr);
+					hmt.Invoice();
 					break;
 				case 2:
 					//Face Shields , gst-12%//
@@ -240,6 +247,12 @@ public class Main {
 		        switch (ch3) {
 				    case 1:
 				    	//brush , gst -18%//
+						System.out.print("\nEnter quantity: "); 
+						qt = sc.nextInt();
+						System.out.print("Enter MRP: ");
+						mr = sc.nextFloat();
+						EighteenPercent brush = new EighteenPercent(qt, mr);
+						brush.Invoice();
 						break;
 					case 2:
 						//Tooth paste , gst-18%//
@@ -309,16 +322,18 @@ public class Main {
 					
 class GST {
 	float Gst, Cgst, Sgst, rate, FinalAmount, mrqt;
+	static float rateAdd, cgstAdd, sgstAdd, FinalAdd, GstAdd;
 	// Final Amount = rate + Cgst + Sgst
 
 	void Invoice() {
-		System.out.println("\tRate: "+rate);
-		System.out.println("\tCGST: "+Cgst);
-		System.out.println("\tSGST: "+Sgst);
-		System.out.println("\tGST: "+Gst);
-		System.out.println("\tMRP: "+FinalAmount);
+		System.out.println("\tRate: "+rateAdd);
+		System.out.println("\tCGST: "+cgstAdd);
+		System.out.println("\tSGST: "+sgstAdd);
+		System.out.println("\tGST: "+GstAdd);
+		System.out.println("\tMRP: "+FinalAdd);
 	}
 }
+
 
 class ZeroPercent extends GST {
 	ZeroPercent(int q, float mrp) {
@@ -327,6 +342,11 @@ class ZeroPercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
+		rateAdd += this.rate;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
 	}
 }
 
@@ -337,6 +357,11 @@ class FivePercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
+		rateAdd += this.rate;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
 	}
 }
 
@@ -347,6 +372,11 @@ class TwelvePercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
+		rateAdd += this.rate;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
 	}
 }
 
@@ -357,6 +387,11 @@ class EighteenPercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
+		rateAdd += this.rate;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
 	}
 }
 
@@ -367,5 +402,10 @@ class TwentyEightPercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
+		rateAdd += this.rate;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
 	}
 }
