@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class Main {
-    int n;//counter var for loop
-	float rateAdd, cgstAdd, sgstAdd, FinalAdd, GstAdd;
+	int n;//counter var for loop
+	int ch;//choice
 	public static void main(String[] args) {
 	Scanner sc = new Scanner (System.in);
 	int n=1;
@@ -322,15 +322,12 @@ public class Main {
 					
 class GST {
 	float Gst, Cgst, Sgst, rate, FinalAmount, mrqt;
-	static float rateAdd, cgstAdd, sgstAdd, FinalAdd, GstAdd;
+	static float cgstAdd, sgstAdd, FinalAdd, GstAdd;
 	// Final Amount = rate + Cgst + Sgst
 
 	void Invoice() {
-		System.out.println("\tRate: "+rateAdd);
-		System.out.println("\tCGST: "+cgstAdd);
-		System.out.println("\tSGST: "+sgstAdd);
-		System.out.println("\tGST: "+GstAdd);
-		System.out.println("\tMRP: "+FinalAdd);
+		System.out.println("\tRate: "+rate+"\t\tCGST: "+Cgst+"\t\tSGST: "+Sgst+"\t\tGST: "+Gst+"\t\tMRP: "+FinalAmount);
+		System.out.println("\tTotal GST: "+GstAdd+"\tTotal CGST: "+cgstAdd+"\tTotal SGST: "+sgstAdd+"\tAmount to be paid: "+FinalAdd);
 	}
 }
 
@@ -342,7 +339,6 @@ class ZeroPercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
-		rateAdd += this.rate;
 		GstAdd += this.Gst;
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
@@ -357,14 +353,13 @@ class FivePercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
-		rateAdd += this.rate;
 		GstAdd += this.Gst;
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
 		FinalAdd += this.FinalAmount;
 	}
 }
-
+    
 class TwelvePercent extends GST {
 	TwelvePercent(int q, float mrp) {
 		this.mrqt = mrp*q;
@@ -372,7 +367,6 @@ class TwelvePercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
-		rateAdd += this.rate;
 		GstAdd += this.Gst;
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
@@ -402,7 +396,6 @@ class TwentyEightPercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
-		rateAdd += this.rate;
 		GstAdd += this.Gst;
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
