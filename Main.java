@@ -381,7 +381,6 @@ class EighteenPercent extends GST {
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
-		rateAdd += this.rate;
 		GstAdd += this.Gst;
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
