@@ -1,25 +1,23 @@
 import java.util.*;
 
 public class Main {
-<<<<<<< Updated upstream
 	int n;//counter var for loop
 	int ch;//choice
-=======
-    int n;//counter var for loop
->>>>>>> Stashed changes
 	public static void main(String[] args) {
 	Scanner sc = new Scanner (System.in);
 	int n=1;
+	int qt;
+	float mr;
 
 	while(n==1) {
 		System.out.println("\nSelect a category");
 		System.out.println("\t1 for EATABLES");
 		System.out.println("\t2 for AUTOMOTIVE");
-		System.out.printlm("\t3 for DAILY ESSENTIALS");
-		System.out.println("\t5 for ELECTRONICS");
-		System.out.println("\t6 for FASHION");
-		System.out.println("\t7 for TRAVEL");
-		System.out.println("\t8 to Exit");
+		System.out.println("\t3 for DAILY ESSENTIALS");
+		System.out.println("\t4 for ELECTRONICS");
+		System.out.println("\t5 for FASHION");
+		System.out.println("\t6 for TRAVEL");
+		System.out.println("\t7 to Exit");
 		System.out.print("Enter your choice: ");
 		int ch=sc.nextInt();
 
@@ -56,12 +54,13 @@ public class Main {
 
 				switch (ch1) {
 					case 1:
+						//Rice , gst-5%//
 						System.out.print("\nEnter quantity: "); 
-						int qt = sc.nextInt();
+						qt = sc.nextInt();
 						System.out.print("Enter MRP: ");
-						float mr = sc.nextFloat();
-						FivePercent f = new FivePercent(qt, mr);
-						f.Invoice();
+						mr = sc.nextFloat();
+						FivePercent rc = new FivePercent(qt, mr);
+						rc.Invoice();
 						break;
 					case 2:
 						//Pulses , gst-5%//
@@ -71,12 +70,24 @@ public class Main {
 						break;
 					case 4:
 						//Wheat , gst-0%//
+						System.out.print("\nEnter quantity: "); 
+						qt = sc.nextInt();
+						System.out.print("Enter MRP: ");
+						mr = sc.nextFloat();
+						ZeroPercent wh = new ZeroPercent(qt, mr);
+						wh.Invoice();
 						break;
 					case 5:
 						//Oil , gst-5%//
 						break;
 					case 6:
 						//Ghee , gst-12%//
+						System.out.print("\nEnter quantity: "); 
+						qt = sc.nextInt();
+						System.out.print("Enter MRP: ");
+						mr = sc.nextFloat();
+						TwelvePercent gh = new TwelvePercent(qt, mr);
+						gh.Invoice();
 						break;
 					case 7:
 						//Poha , gst-5%//
@@ -89,6 +100,12 @@ public class Main {
 						break;
 					case 10:
 						//Biscuits , gst-18%//
+						System.out.print("\nEnter quantity: "); 
+						qt = sc.nextInt();
+						System.out.print("Enter MRP: ");
+						mr = sc.nextFloat();
+						EighteenPercent bst = new EighteenPercent(qt, mr);
+						bst.Invoice();
 						break;
 					case 11:
 						//Namkeen , gst-12%//
@@ -134,12 +151,15 @@ public class Main {
 						break;
 					case 25:
 						//Caffinated Beverages , gst-28%//
+						System.out.print("\nEnter quantity: "); 
+						qt = sc.nextInt();
+						System.out.print("Enter MRP: ");
+						mr = sc.nextFloat();
+						TwentyEightPercent bvg = new TwentyEightPercent(qt, mr);
+						bvg.Invoice();
 						break;
-						
-					default:
-						System.out.println("Invalid Choice");
 				}
-		switch (ch) {
+				
 			case 2:
 				System.out.println("\nSelect an item");
 				System.out.println("\t1 for Helmets");
@@ -159,6 +179,12 @@ public class Main {
 				switch (ch2) {
 				case 1:
 					//helmets , gst-18%//
+					System.out.print("\nEnter quantity: "); 
+					qt = sc.nextInt();
+					System.out.print("Enter MRP: ");
+					mr = sc.nextFloat();
+					EighteenPercent hmt = new EighteenPercent(qt, mr);
+					hmt.Invoice();
 					break;
 				case 2:
 					//Face Shields , gst-12%//
@@ -193,7 +219,7 @@ public class Main {
 				default:
 					System.out.println("Invalid Choice");
 				}
-		switch (ch) {
+				
 			case 3:
 				System.out.println("\nSelect an item");
 				System.out.println("\t1 for brush");
@@ -219,9 +245,14 @@ public class Main {
 				int ch3=sc.nextInt();
 				
 		        switch (ch3) {
-		        
 				    case 1:
 				    	//brush , gst -18%//
+						System.out.print("\nEnter quantity: "); 
+						qt = sc.nextInt();
+						System.out.print("Enter MRP: ");
+						mr = sc.nextFloat();
+						EighteenPercent brush = new EighteenPercent(qt, mr);
+						brush.Invoice();
 						break;
 					case 2:
 						//Tooth paste , gst-18%//
@@ -280,60 +311,17 @@ public class Main {
 					default:
 						System.out.println("Invalid Choice");
 					}
-		    switch (ch) {
-		       case 4:
-		    	    System.out.println("\nSelect an item");
-					System.out.println("\t1 for Washing Machine");
-					System.out.println("\t2 for Air Conditioner");
-					System.out.println("\t3 for Dish Washing Machine");
-					System.out.println("\t4 for Mobile Phone");
-					System.out.println("\t5 for Air Podes");
-					System.out.println("\t6 for Speakers");
-					System.out.println("\t7 for Laptop");
-					System.out.println("\t8 for Hair Appliances");
-					System.out.println("\t9 for Mixer Grinder");
-					System.out.println("\t10 for Water Purifier");
-					System.out.println("\t11 for Water Gyser");
-					System.out.println("\t12 for Printer");
-					System.out.println("\t13 for TV(Above 32 inches)");
-					System.out.println("\t14 for Smart Watches");
-					System.out.println("\t15 for Sewing Machine");
-					int ch4=sc.nextInt();
-					break;
-		    	   
-		    	
-		   switch (ch) {
-		      case 5:
-		    	    System.out.println("\nSelect an item");
-					System.out.println("\t1 for Leather Products");
-					System.out.println("\t2 for Footwear");
-					System.out.println("\t3 for Watches");
-					System.out.println("\t4 for Clothing");
-					System.out.println("\t5 for Perfumes");
-					System.out.println("\t6 for Sunscream");
-					System.out.println("\t7 for Cosmetic Products");
-					System.out.println("\t8 for Trimmer");
-					System.out.println("\t9 for Kids Cotton Clothes");
-					int ch5=sc.nextInt();
-					break;
-		    	  
-		        
-		   }
-			break;
 			
-		 default:
-			 System.out.println("Invalid Choice");
-				System.out.println("Enter 1 to add an item and 2 to ");
-				}
-			}
-		}
-	}
+		    case 7: 
+		        n = 0;
+		        break;
+	    }
+    }
+}
+}
 					
 class GST {
 	float Gst, Cgst, Sgst, rate, FinalAmount, mrqt;
-<<<<<<< Updated upstream
-	// Final Amount = rate + Cgst + Sgst
-=======
 	static float cgstAdd, sgstAdd, FinalAdd, GstAdd;
 	// Final Amount = rate + Cgst + Sgst
 
@@ -356,14 +344,11 @@ class ZeroPercent extends GST {
 		sgstAdd += this.Sgst;
 		FinalAdd += this.FinalAmount;
 	}
->>>>>>> Stashed changes
 }
 
 class FivePercent extends GST {
 	FivePercent(int q, float mrp) {
 		this.mrqt = mrp*q;
-<<<<<<< Updated upstream
-=======
 		this.Gst = (5*mrqt)/118;
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
@@ -374,7 +359,7 @@ class FivePercent extends GST {
 		FinalAdd += this.FinalAmount;
 	}
 }
-
+    
 class TwelvePercent extends GST {
 	TwelvePercent(int q, float mrp) {
 		this.mrqt = mrp*q;
@@ -392,28 +377,18 @@ class TwelvePercent extends GST {
 class EighteenPercent extends GST {
 	EighteenPercent(int q, float mrp) {
 		this.mrqt = mrp*q;
->>>>>>> Stashed changes
 		this.Gst = (18*mrqt)/118;
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
-<<<<<<< Updated upstream
-=======
+		rateAdd += this.rate;
 		GstAdd += this.Gst;
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
 		FinalAdd += this.FinalAmount;
->>>>>>> Stashed changes
 	}
+}
 
-<<<<<<< Updated upstream
-	void Invoice() {
-		System.out.println("\tRate: "+rate);
-		System.out.println("\tCGST: "+Cgst);
-		System.out.println("\tSGST: "+Sgst);
-		System.out.println("\tGST: "+Gst);
-		System.out.println("\tMRP: "+FinalAmount);
-=======
 class TwentyEightPercent extends GST {
 	TwentyEightPercent(int q, float mrp) {
 		this.mrqt = mrp*q;
@@ -425,6 +400,5 @@ class TwentyEightPercent extends GST {
 		cgstAdd += this.Cgst;
 		sgstAdd += this.Sgst;
 		FinalAdd += this.FinalAmount;
->>>>>>> Stashed changes
 	}
 }
