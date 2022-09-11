@@ -1,8 +1,12 @@
 import java.util.*;
 
 public class Main {
+<<<<<<< Updated upstream
 	int n;//counter var for loop
 	int ch;//choice
+=======
+    int n;//counter var for loop
+>>>>>>> Stashed changes
 	public static void main(String[] args) {
 	Scanner sc = new Scanner (System.in);
 	int n=1;
@@ -327,23 +331,100 @@ public class Main {
 					
 class GST {
 	float Gst, Cgst, Sgst, rate, FinalAmount, mrqt;
+<<<<<<< Updated upstream
 	// Final Amount = rate + Cgst + Sgst
+=======
+	static float cgstAdd, sgstAdd, FinalAdd, GstAdd;
+	// Final Amount = rate + Cgst + Sgst
+
+	void Invoice() {
+		System.out.println("\tRate: "+rate+"\t\tCGST: "+Cgst+"\t\tSGST: "+Sgst+"\t\tGST: "+Gst+"\t\tMRP: "+FinalAmount);
+		System.out.println("\tTotal GST: "+GstAdd+"\tTotal CGST: "+cgstAdd+"\tTotal SGST: "+sgstAdd+"\tAmount to be paid: "+FinalAdd);
+	}
+}
+
+
+class ZeroPercent extends GST {
+	ZeroPercent(int q, float mrp) {
+		this.mrqt = mrp*q;
+		this.Gst = (0*mrqt)/118;
+		this.Cgst = this.Sgst = Gst/2;
+		this.rate = mrqt - Gst;
+		this.FinalAmount = rate+Gst;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
+	}
+>>>>>>> Stashed changes
 }
 
 class FivePercent extends GST {
 	FivePercent(int q, float mrp) {
 		this.mrqt = mrp*q;
+<<<<<<< Updated upstream
+=======
+		this.Gst = (5*mrqt)/118;
+		this.Cgst = this.Sgst = Gst/2;
+		this.rate = mrqt - Gst;
+		this.FinalAmount = rate+Gst;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
+	}
+}
+
+class TwelvePercent extends GST {
+	TwelvePercent(int q, float mrp) {
+		this.mrqt = mrp*q;
+		this.Gst = (12*mrqt)/118;
+		this.Cgst = this.Sgst = Gst/2;
+		this.rate = mrqt - Gst;
+		this.FinalAmount = rate+Gst;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
+	}
+}
+
+class EighteenPercent extends GST {
+	EighteenPercent(int q, float mrp) {
+		this.mrqt = mrp*q;
+>>>>>>> Stashed changes
 		this.Gst = (18*mrqt)/118;
 		this.Cgst = this.Sgst = Gst/2;
 		this.rate = mrqt - Gst;
 		this.FinalAmount = rate+Gst;
+<<<<<<< Updated upstream
+=======
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
+>>>>>>> Stashed changes
 	}
 
+<<<<<<< Updated upstream
 	void Invoice() {
 		System.out.println("\tRate: "+rate);
 		System.out.println("\tCGST: "+Cgst);
 		System.out.println("\tSGST: "+Sgst);
 		System.out.println("\tGST: "+Gst);
 		System.out.println("\tMRP: "+FinalAmount);
+=======
+class TwentyEightPercent extends GST {
+	TwentyEightPercent(int q, float mrp) {
+		this.mrqt = mrp*q;
+		this.Gst = (28*mrqt)/118;
+		this.Cgst = this.Sgst = Gst/2;
+		this.rate = mrqt - Gst;
+		this.FinalAmount = rate+Gst;
+		GstAdd += this.Gst;
+		cgstAdd += this.Cgst;
+		sgstAdd += this.Sgst;
+		FinalAdd += this.FinalAmount;
+>>>>>>> Stashed changes
 	}
 }
