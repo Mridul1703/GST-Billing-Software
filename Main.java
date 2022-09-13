@@ -11,6 +11,7 @@ public class Main {
 		float mr;
 
 		while (n == 1) {
+			// MainMenu
 			System.out.println("\nSelect a category");
 			System.out.println("\t1 for EATABLES");
 			System.out.println("\t2 for AUTOMOTIVE");
@@ -21,7 +22,9 @@ public class Main {
 			System.out.println("\t7 to Exit");
 			System.out.print("Enter your choice: ");
 			int ch = sc.nextInt();
+			// MainMenu ends
 
+			// EatablesMenu 
 			switch (ch) {
 				case 1:
 					System.out.println("\nSelect an item");
@@ -160,7 +163,9 @@ public class Main {
 							bvg.Invoice();
 							break;
 					}
+					// EatablesMenu ends
 
+				// AutoMotiveMenu 
 				case 2:
 					System.out.println("\nSelect an item");
 					System.out.println("\t1 for Helmets");
@@ -220,7 +225,9 @@ public class Main {
 						default:
 							System.out.println("Invalid Choice");
 					}
+					// AutoMotiveMenu ends
 
+				// DailyEssentialsMenu 
 				case 3:
 					System.out.println("\nSelect an item");
 					System.out.println("\t1 for brush");
@@ -312,7 +319,9 @@ public class Main {
 						default:
 							System.out.println("Invalid Choice");
 					}
+					// DailyEssentialsMenu ends
 
+				// SportsMenu
 				case 6:
 					System.out.println("\nSelect an item");
 					System.out.println("\t1 for Carrom");
@@ -369,12 +378,14 @@ public class Main {
 						case 10:
 							// swimming gear,gst - 28%
 							break;
-
 					}
+					// SportsMenu ends
 
+				// ExitMenu
 				case 7:
 					n = 0;
 					break;
+				// ExitMenu ends
 			}
 		}
 	}
