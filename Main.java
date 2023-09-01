@@ -12,6 +12,9 @@ public class Main {
 
 		while (n == 1) {
 			// MainMenu
+
+			System.out.print("\t\t******GST BILLING SOFTWARE****** ");
+
 			System.out.println("\nSelect a category");
 			System.out.println("\t1 for EATABLES");
 			System.out.println("\t2 for AUTOMOTIVE");
